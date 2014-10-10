@@ -40,8 +40,9 @@ class Calculator {
 
 class SubstractionableCalculator extends Calculator {
 	public SubstractionableCalculator(int left, int right) {
-		this.left = left;
-		this.right = right;
+		// super 키워드는 부모 클래스를 의미한다.
+		// 아래 코드는 부모 클래스가 가지고 있는 전역변수 left와 right를 가리킨다.
+		super(left, right);
 	}
 	
 	public void substract() {
