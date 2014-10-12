@@ -10,6 +10,14 @@ abstract class Calculator{
 		this.left = left;
 		this.right = right;
 	}
+	//정수형의 메소드 _sum()선언
+	//전역변수의 합을 리턴한다.
+	int _sum(){
+		return this.left+this.right;
+	}
+	int _avg(){
+		return (this.left+this.right)/2;
+	}
 	//추상메소드 sum()선언
 	public abstract void sum();
 	//추상메소드 avg()선언
@@ -25,26 +33,26 @@ abstract class Calculator{
 class CalculatorDecoPlus extends Calculator{
 	//상속받은 추상메소드 sum()을 오버라이딩(내용 재정의)
 	public void sum(){
-		//파라미터값으로 넘어온 값을 담은 전역변수 left와 right의 더한값을 문자열과 함께 출력
-		System.out.println("+ sum :"+(this.left+this.right));
+		//문자열과 함께 부모클래스의 메소드_sum()호출
+		System.out.println("+ sum :"+ _sum());
 	}
 	//상속받은 추상메소드 avg()를 오버라이딩
 	public void avg(){
-		//파라미터값으로 넘어온 값을 담은 전역변수의 평균값을 문자열과 함께 출력
-		System.out.println("+ avg :"+(this.left+this.right)/2);
+		//문자열과 함께 부모클래스의 메소드 _avg()호출
+		System.out.println("+ avg :"+ _avg());
 	}
 }
 //추상클래스 Calculator로 부터 상속받는 클래스 CalculatorDecoMinus선언
 class CalculatorDecoMinus extends Calculator{
 	//상속받은 추상메서드 sum()을 오버라이딩
 	public void sum(){
-		//파라미터값으로 넘어온 값을 담은 전역변수의 덧셈 결과를 문자열과 함께 출력
-		System.out.println("- sum :"+(this.left+this.right));
+		//문자열과 함께 부모클래스의 메소드 _sum()호출
+		System.out.println("- sum :"+ _sum());
 	}
 	//상속받은 추상메소드 avg()를 오버라이딩
 	public void avg(){
-		//파라미터값으로 넘어온 값을 담은 전역변수의 평균값을 문자열과 함께 출력
-		System.out.println("- avg :"+(this.left+this.right)/2);
+		//문자열과 함께 부모클래스의 메소드 _avg()호출
+		System.out.println("- avg :"+ _avg());
 	}
 }
 //화면에 뿌려질 내용 시작
