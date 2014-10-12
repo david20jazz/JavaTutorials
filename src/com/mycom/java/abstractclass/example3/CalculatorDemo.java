@@ -10,7 +10,9 @@ abstract class Calculator{
 		this.left = left;
 		this.right = right;
 	}
-	//정수형의 메소드 _sum()선언
+	//정수형의 메소드 _sum()선언 
+	//접근제어자가 선언되어 있지 않으면 default가 된다. default는 같은 패키지
+	//안에서만 유효하다.
 	//전역변수의 합을 리턴한다.
 	int _sum(){
 		return this.left+this.right;
