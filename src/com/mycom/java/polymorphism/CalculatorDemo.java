@@ -56,6 +56,14 @@ class CalculatorDecoMinus extends Calculator{
 }
 //화면에 뿌려질 내용 시작
 public class CalculatorDemo {
+	//메소드 execute선언
+	//부모클래스 Calculator를 데이터 형식으로 하는 변수 cal선언 
+	public static void execute(Calculator cal){
+		//문자열 출력
+		System.out.println("실행결과");
+		//변수 cal의 부모클래스 안에 존재하는 메소드 run()호출
+		cal.run();
+	}
 
 	public static void main(String[] args) {
 		//클래스 CalculatorDecoPlus의 인스턴스 c1선언
@@ -63,17 +71,17 @@ public class CalculatorDemo {
 		Calculator c1 = new CalculatorDecoPlus();
 		//부모클래스의 메소드 setOprands에게 파라미터값 전달
 		c1.setOprands(10, 20);
-		//부모클래스의 메소드 run()호출
-		c1.run();
 		
 		//클래스 CalculatorDecoMinus의 인스턴스 c2선언
 		//데이터타입이 부모클래스 Calculator이다.
 		Calculator c2 = new CalculatorDecoMinus();
 		//부모클래스의 메소드 setOprands에게 파라미터값 전달
 		c2.setOprands(10, 20);
-		//부모클래스의 메소드 run()호출
-		c2.run();
-
+		
+		//메소드 extcute를 통해 인스턴스 c1호출
+		execute(c1);
+		//메소드 extcute를 통해 인스턴스 c2호출
+		execute(c2);
 	}
 
 }
