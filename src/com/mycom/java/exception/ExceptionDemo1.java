@@ -23,6 +23,10 @@ class A{
 			//예외(오류) 출력
 		} catch(Exception e){
 			System.out.println("Exception");
+			//finally는 유효성 검사가 끝나도 오류가 DB와 연결되는 현상을
+			//종료 시키기 위해 사용한다.
+		} finally{
+			System.out.println("finally");
 		}
 	}
 }
